@@ -1,0 +1,22 @@
+<div>
+  <mat-toolbar class="position-fixed" color="primary" class="position-fixed">
+    <span class="app-title" (click)="getTopNews('Top')">Hacker News</span>
+    <div class="tabs">
+      <button mat-button (click)="getTopNews('New')">New</button>
+      <button mat-button (click)="getTopNews('Best')">Best</button>
+      <button mat-button (click)="getTopNews('Ask')">Ask</button>
+      <button mat-button (click)="getTopNews('Show')">Show</button>
+      <button mat-button (click)="getTopNews('Jobs')">Jobs</button>
+    </div>
+  </mat-toolbar>
+  <!-- progress bar -->
+  <mat-progress-bar *ngIf="isProgressBarVisible" class="progress-bar" mode="indeterminate" value="40">
+  </mat-progress-bar>
+  <!-- breadcrumb  -->
+  <div class="breadcrumb-container">
+    <h5 class="breadcrumb-text">{{breadcrumb}}</h5>
+  </div>
+
+  <!-- news content component  -->
+  <news-content class="news-content" [newsData]="newsData"></news-content>
+</div>

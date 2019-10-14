@@ -1,0 +1,32 @@
+<div class="news-content">
+  <mat-list *ngFor="let story of newsData">
+    <mat-list-item>
+      <div matLine fxLayout="row" fxLayoutAlign="space-between">
+        <!-- story title -->
+        <div>
+          <a mat-button [disableRipple]="true" [matTooltip]="story.domain" rel="nofollow noreferrer noopener"
+            [href]="story.url" target="_blank" class="story-title">
+            {{story.title }}
+          </a>
+          <!-- story domain -->
+          <span *ngIf="story.domain" class="domain-text"> {{" (" + story.domain + ")"}} </span>
+        </div>
+        <!-- time passed  -->
+        <span class="time-style"> {{story.time | formatDate  | timeAgo}} </span>
+      </div>
+      <div matLine fxLayout="row" fxLayoutAlign="space-between">
+        <div>
+          <mat-icon class="points-icon" [matTooltip]="story.points + ' points'">star</mat-icon>
+          <span class="points"> {{story.points || story.score}} points by {{story.user || story.by }} </span>
+        </div>
+        <div>
+          <span *ngIf="story.comments_count || story.descendants as count" class="comments"> {{count}} </span>
+          <mat-icon *ngIf="story.comments_count || story.descendants as value" [matTooltip]="value + ' comments'">
+            chat_bubble_outline</mat-icon>
+        </div>
+
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>

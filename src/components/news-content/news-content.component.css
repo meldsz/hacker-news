@@ -1,0 +1,32 @@
+  .story-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .domain-text {
+    position: relative;
+    bottom: 13px;
+    color: grey;
+  }
+
+  .points-icon {
+    position: relative;
+    left: 12px;
+    color: gold;
+  }
+
+  .comments {
+    position: relative;
+    bottom: 8px;
+  }
+
+  .points {
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+  }
+
+  .time-style {
+    color: gray;
+  }
